@@ -11,14 +11,23 @@ export function SideBar(){
 
     return (
         <>
-        <aside className={`sticky tip-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 ${isLargeOpen ? 'lg:hidden' : 'lg:flex'}`}>
+        <aside className={`sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 ${isLargeOpen ? 'lg:hidden' : 'lg:flex'}`}>
             <SmallSidebarItem Icon={Home} title='Home' url='/'/>
             <SmallSidebarItem Icon={Repeat} title='Shorts' url='/shorts'/>
             <SmallSidebarItem Icon={Clapperboard} title='Subscriptions' url='/subscriptions'/>
             <SmallSidebarItem Icon={Library} title='Library' url='/library'/>
         </aside>
+        {isSmallOpen && (
+            <div onClick={close} className="lg:hidden fixed inset-0 bg-secondary-dark opacity-50">
+
+            </div>
+        )}
+
         <aside className={`w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 ${isLargeOpen ? 'lg:flex' : 'lg:hidden'} ${isSmallOpen ? 'flex z-[999] bg-white' : 'hidden'}`}>
+            <div className="lg:hidden pt-2 pb-4 px-2 sticky top-0 bg-white">
             <PageHeaderFirstSection />
+
+            </div>
             <LargeSidebarSection >
                 <LargeSidebarItem isActive IconOrImgUrl={Home} title='Home' url='/'/>
                 <LargeSidebarItem IconOrImgUrl={Clapperboard} title='Subscriptions' url='/subscriptions'/>
