@@ -7,7 +7,7 @@ import { useSidebarContext } from "../context/SidebarContext";
 import { PageHeaderFirstSection } from "./PageHeader";
 
 export function SideBar(){
-    const {isLargeOpen, isSmallOpen} = useSidebarContext()
+    const {isLargeOpen, isSmallOpen, close} = useSidebarContext()
 
     return (
         <>
