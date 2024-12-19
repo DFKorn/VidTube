@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react"
+import { createContext, ReactNode, useContext, useState } from "react"
 
 type SidebarProviderProps = {
     children: ReactNode
@@ -13,7 +13,14 @@ type SidebarContextType = {
 
 const SidebarContext = createContext<SidebarContextType | null>(null)
 
-export function SidebatProvider({children}: SidebarProviderProps){
+export function useSidebarContext(){
+    const value = useContext(SidebarContext)
+    if(value == null) {throw Error('Cannot use outside of SidebarProvider')}
+    
+    return value
+}
+
+export function SidebarProvider({children}: SidebarProviderProps){
     const [isLargeOpen, setIsLargeOpen] = useState(true)
     const [isSmallOpen, setIsSmallOpen] = useState(false)
 
