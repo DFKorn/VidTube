@@ -7,5 +7,5 @@ YouTube home page clone
 * TypeScript
 * Vite
 
-### Live - [VidTube](https://amusing-jamm.netlify.app/)
+### Live - [VidTube](https://vidtubelocal.netlify.app/)
 
